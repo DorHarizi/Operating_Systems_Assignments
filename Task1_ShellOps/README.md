@@ -61,4 +61,4 @@ This stshell program supports running system commands using `fork`, `exec`, and`
 </div>
 
 ## Author: </div>
-[Batel Cohen Yerushalmi](https://github.com/BatelCohen7 "Batel Cohen Yerushalmi") **&** [Dor Harizi](https://github.com/DorHarizi "Dor Harizi")
+[Dor Harizi](https://github.com/DorHarizi "Dor Harizi")**&** [Batel Cohen Yerushalmi](https://github.com/BatelCohen7 "Batel Cohen Yerushalmi") 
