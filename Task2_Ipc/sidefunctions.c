@@ -2,6 +2,13 @@
 
 #define BUFFER_SIZE 1024
 
+
+/*
+generate_file(char *filename, long size_in_bytes)
+This function is creating a file with random content.
+It opens a file for writing and handles any error during opening.
+It writes chunks of data to the file until it reaches the specified size.
+*/
 void generate_file(char *filename, long size_in_bytes)
 {
     FILE *myfile = fopen(filename, "w");
@@ -28,6 +35,13 @@ void generate_file(char *filename, long size_in_bytes)
 
     fclose(myfile);
 }
+
+/*
+generate_checksum(char *filename)
+This function computes a checksum of a file.
+It reads each byte of the file, adding its value to a running total (checksum), which is returned at the end.
+This function also handles file opening errors.
+*/
 
 uint32_t generate_checksum(char *filename)
 {
@@ -56,6 +70,11 @@ uint32_t generate_checksum(char *filename)
     return checksum;
 }
 
+/*
+delete_file(char *filename)
+This function deletes a specified file and handles any deletion errors.
+If the deletion is successful, it returns 0; otherwise, it returns 1
+*/
 int delete_file(char *filename)
 {
     int status = remove(filename);
@@ -71,6 +90,10 @@ int delete_file(char *filename)
     }
 }
 
+/*
+getFileSize(char *filename)
+This function gets the size of a file by opening it in binary mode, seeking to the end, and then returning the current position.
+*/
 int getFileSize(char *filename)
 {
     FILE *file = fopen(filename, "rb"); // Open the file in binary mode
@@ -92,6 +115,13 @@ int getFileSize(char *filename)
 
     return size;
 }
+
+/*
+receive_data(char *port, char *type, char *comm, int datasize, int quiet)
+This function receives data over network sockets.
+It initializes the socket, binds it, and then listens for incoming data.
+Depending on the protocol (TCP/UDP), it receives the data and writes it to a file.
+*/
 
 int receive_data(char *port, char *type, char *comm, int datasize, int quiet)
 {
@@ -271,6 +301,12 @@ int receive_data(char *port, char *type, char *comm, int datasize, int quiet)
     return size;
 }
 
+/*
+send_data_mmap(char *fnFrom, char *inputFilename)
+This function sends data by copying a file to shared memory.
+The data in the file is accessed via memory-mapped files and then copied to shared memory.
+*/
+
 void send_data_mmap(char *fnFrom, char *inputFilename)
 {
     printf("Copying file to shared memory\n");
@@ -317,6 +353,12 @@ void send_data_mmap(char *fnFrom, char *inputFilename)
     close(fd_received);
     close(shm_fd);
 }
+
+/*
+receive_data_mmap(char *filenameTo, char *inputFilename, int datasize, int quiet)
+This function receives data from shared memory and writes it to a file.
+The data in shared memory is accessed and then copied to a newly created or truncated file.
+*/
 
 void receive_data_mmap(char *filenameTo, char *inputFilename, int datasize, int quiet)
 {
@@ -370,6 +412,12 @@ void receive_data_mmap(char *filenameTo, char *inputFilename, int datasize, int 
     close(shm_fd);
 }
 
+/*
+send_file_through_pipe(char *fnFrom, char *pipename)
+This function sends a file through a named pipe (FIFO).
+It reads from a file and writes the content to a pipe.
+*/
+
 void send_file_through_pipe(char *fnFrom, char *pipename)
 {
     printf("Sending data\n");
@@ -409,6 +457,14 @@ void send_file_through_pipe(char *fnFrom, char *pipename)
     close(fd_received);
     close(fdpipe);
 }
+
+/*
+send_data(char *ip, char *port, char *filename, char *type, char *comm)
+This function is responsible for sending data over a network.
+It opens a file, creates a socket, and initializes necessary network structures based on the communication protocol (TCP/UDP).
+Data is then read from the file and sent over the network through the socket.
+*/
+
 void send_data(char *ip, char *port, char *filename, char *type, char *comm)
 {
     int Type = 0;
@@ -544,6 +600,8 @@ void send_data(char *ip, char *port, char *filename, char *type, char *comm)
     fclose(fp);
     close(sockfd);
 }
+
+
 void receive_file_through_pipe(char *filenameTo, char *pipename, int quiet)
 {
     char buffer[BUFFER_SIZE] = {0};
