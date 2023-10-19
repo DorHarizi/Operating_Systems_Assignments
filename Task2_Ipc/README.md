@@ -1,4 +1,4 @@
-# ipc</div>
+# Ipc</div>
 Task 3 : Linux practice - Operating systems course.</div>
 
 ## Project Description:</div>
@@ -20,7 +20,7 @@ We implemented two coding libraries:</div>
 4.  Report the result to stdOut.</div>
 
 ## Building</div>
-1. Cloning the repo to local machine: ` git clone` https://github.com/DorHarizi/task3_os_ipc.git </div>
+1. Cloning the repo to local machine: ` git clone` https://github.com/DorHarizi/Task2_Ipc.git </div>
 2. Building all the necessary files & the main programs:  `make` </div>
 
 
