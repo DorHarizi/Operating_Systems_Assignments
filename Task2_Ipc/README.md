@@ -1,5 +1,5 @@
 # Ipc</div>
-Task 3 : Linux practice - Operating systems course.</div>
+Task 2 : Linux practice - Operating systems course.</div>
 
 ## Project Description:</div>
 The task is made of 2 parts: stnc (st for students, nc for network communication), network performance test utility.</div>
