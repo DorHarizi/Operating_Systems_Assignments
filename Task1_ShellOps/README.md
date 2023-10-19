@@ -45,7 +45,7 @@ This stshell program supports running system commands using `fork`, `exec`, and`
 </div>
 
 ## Building</div>
-1. Cloning the repo to local machine: ` git clone` [https://github.com/DorHarizi/task2_opsys](https://github.com/DorHarizi/Operating_Systems_Assignments/tree/main/Task1_ShellOps).git </div>
+1. Cloning the repo to local machine: ` git clone` [https://github.com/DorHarizi/Operating_Systems_Assignments/Task1_ShellOps](https://github.com/DorHarizi/Operating_Systems_Assignments/tree/main/Task1_ShellOps).git </div>
 2. Building all the necessary files & the main programs:  `make all` </div>
 3. Export shared libraries : `export LD_LIBRARY_PATH="."` </div>
 </div>
