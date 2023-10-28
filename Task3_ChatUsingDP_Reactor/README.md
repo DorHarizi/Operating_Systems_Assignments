@@ -1,5 +1,5 @@
 # Chat supports an unlimited members using Reactor Design pattern </div>
-Task 4 : Linux practice - Operating systems course.</div>
+Task 3 : Linux practice - Operating systems course.</div>
 
 ## Project Description:</div>
 The reactor of the design pattern according like that: </div>
