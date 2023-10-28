@@ -1,5 +1,5 @@
 # shell</div>
-Task 2 : Linux practice - Operating systems course.</div>
+Task 1 : Linux practice - Operating systems course.</div>
 
 ## Project Description:</div>
 The task is made of 3 parts: file operations, dynamic libraries, and basic shell.</div>
